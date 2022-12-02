@@ -31,9 +31,16 @@ public class AppController {
     }
     
     
-    @RequestMapping(value="/",method =RequestMethod.GET)
+    @RequestMapping(value="/listdepartement",method =RequestMethod.GET)
 
     public String f(Model m) {
+    	 m.addAttribute("listdep", daoDep.findAll());
+    	return "listdep";
+    	
+    }
+    @RequestMapping(value="/",method =RequestMethod.GET)
+
+    public String f7(Model m) {
     	 m.addAttribute("listdep", daoDep.findAll());
     	return "listdep";
     	

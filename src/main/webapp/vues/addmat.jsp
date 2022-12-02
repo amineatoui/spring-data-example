@@ -10,7 +10,9 @@
 <title>Ajout Materiel</title>
 </head>
 <body>
-
+<sec:authorize access="isAuthenticated()">
+<a class="btn btn-danger" href="<c:url value="/logout" />">Logout</a> 
+</sec:authorize>
  <div class="container">
     <h1 class="text-success">Ajouter un matériel</h1>
     

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c"      uri="http://java.sun.com/jsp/jstl/core" %>
-    
+    <%@ taglib prefix="sec"      uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +10,9 @@
 <title>Acceuil</title>
 </head>
 <body>
- 
+ <sec:authorize access="isAuthenticated()">
+<a class="btn btn-danger" href="<c:url value="/logout" />">Logout</a> 
+</sec:authorize>
   <div class="container-md" id="container" style="diplay : flex;justify-content: center;align-content: center;">
  <div  style="align-self: center;">
    <h1 class="text-success">Liste des Départements</h1>
